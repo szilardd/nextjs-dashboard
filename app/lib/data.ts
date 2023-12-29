@@ -42,8 +42,7 @@ export async function fetchLatestInvoices() {
       LIMIT 5`;
 
     const latestInvoices = data.rows.map((invoice) => ({
-      ...invoice,
-      amount: formatCurrency(invoice.amount),
+      ...invoice, amount: formatCurrency(invoice.amount),
     }));
     return latestInvoices;
   } catch (error) {
